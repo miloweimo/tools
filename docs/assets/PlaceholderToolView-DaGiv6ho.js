@@ -1,1 +1,0 @@
-import{_ as s,c as a,b as o,a as c}from"./index-DzcEQlbM.js";const t={},l={class:"placeholder"};function r(n,e){return c(),a("div",l,[...e[0]||(e[0]=[o("h1",null,"更多工具即将上线",-1),o("p",null,"此页面用于演示工具注册流程，后续可替换为具体功能。",-1)])])}const d=s(t,[["render",r],["__scopeId","data-v-be489706"]]);export{d as default};
