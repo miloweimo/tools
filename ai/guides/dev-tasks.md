@@ -92,3 +92,16 @@
 - 色块拖拽依赖 Pointer Events；窄屏可横向滚动时间轴。
 - 导出/导入：CSV（UTF-8 BOM）与 Excel（`xlsx`）；见 [`src/utils/ganttIo.ts`](../../src/utils/ganttIo.ts)。
 - 任务行左侧拖动手柄：HTML5 拖放调整顺序（左侧行与右侧轨道均可作为释放目标）。
+
+---
+
+## 里程碑：主题切换（2026-03-25）
+
+**目标**：顶栏手动浅色/深色；与系统偏好协作；持久化。
+
+### 任务清单
+
+- [x] [`src/assets/base.css`](../../src/assets/base.css)：`data-theme` + 系统暗色媒体查询
+- [x] [`src/utils/theme.ts`](../../src/utils/theme.ts) + [`src/main.ts`](../../src/main.ts) 防闪烁
+- [x] [`src/App.vue`](../../src/App.vue) 切换按钮
+- [x] [`changelog/2026-03-25-theme-toggle.md`](../changelog/2026-03-25-theme-toggle.md)

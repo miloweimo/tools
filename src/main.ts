@@ -1,5 +1,9 @@
 import './assets/main.css'
 
+import { applyThemeToDocument, getStoredTheme } from './utils/theme'
+
+applyThemeToDocument(getStoredTheme())
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

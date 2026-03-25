@@ -896,14 +896,8 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   touch-action: none;
-  color: #1a1a1a;
+  color: var(--gantt-bar-text);
   border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-@media (prefers-color-scheme: dark) {
-  .bar {
-    color: #111;
-  }
 }
 
 .bar:active {
@@ -918,7 +912,7 @@ onMounted(() => {
   text-overflow: ellipsis;
   white-space: nowrap;
   pointer-events: none;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+  text-shadow: var(--gantt-bar-text-shadow);
 }
 
 .handle {

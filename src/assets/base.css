@@ -33,11 +33,16 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
 
+  /* 彩色条上的文字（如甘特任务条） */
+  --gantt-bar-text: #1a1a1a;
+  --gantt-bar-text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+
   --section-gap: 160px;
 }
 
+/* 未设置 data-theme 时跟随系统 */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
@@ -47,7 +52,42 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+
+    --gantt-bar-text: rgba(255, 255, 255, 0.92);
+    --gantt-bar-text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   }
+}
+
+/* 手动深色 */
+:root[data-theme='dark'] {
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+
+  --gantt-bar-text: rgba(255, 255, 255, 0.92);
+  --gantt-bar-text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+/* 手动浅色（用于在系统深色下仍保持浅色） */
+:root[data-theme='light'] {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --gantt-bar-text: #1a1a1a;
+  --gantt-bar-text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
 }
 
 *,
