@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import {
   buildCsv,
+  buildXlsxBuffer,
   csvEscapeCell,
   parseCsvGantt,
   parseCsvText,
   parseImportTable,
+  parseXlsxGantt,
   normalizeDateCell
 } from '../ganttIo'
 
@@ -17,6 +19,17 @@ describe('ganttIo', () => {
 
   it('parseCsvText handles quoted commas', () => {
     expect(parseCsvText('a,"b,c",d')).toEqual([['a', 'b,c', 'd']])
+  })
+
+  it('buildXlsxBuffer returns readable xlsx (SheetJS array output is ArrayBuffer)', () => {
+    const buf = buildXlsxBuffer('2026-01-01', '2026-01-10', true, [
+      { title: 'T1', start: '2026-01-02', end: '2026-01-05', color: 'hsl(0 50% 50%)' }
+    ])
+    expect(buf.byteLength).toBeGreaterThan(64)
+    const { meta, rows } = parseXlsxGantt(buf)
+    expect(meta.rangeStart).toBe('2026-01-01')
+    expect(rows).toHaveLength(1)
+    expect(rows[0]).toMatchObject({ title: 'T1', start: '2026-01-02', end: '2026-01-05' })
   })
 
   it('buildCsv + parseCsvGantt roundtrip', () => {

@@ -229,8 +229,9 @@ export function buildXlsxBuffer(
   const ws = XLSX.utils.aoa_to_sheet(aoa)
   const wb = XLSX.utils.book_new()
   XLSX.utils.book_append_sheet(wb, ws, '甘特')
-  const u8 = XLSX.write(wb, { bookType: 'xlsx', type: 'array' }) as Uint8Array
-  return u8.buffer.slice(u8.byteOffset, u8.byteOffset + u8.byteLength)
+  const raw = XLSX.write(wb, { bookType: 'xlsx', type: 'array' }) as ArrayBuffer | Uint8Array
+  if (raw instanceof ArrayBuffer) return raw.slice(0)
+  return raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength)
 }
 
 export function parseXlsxGantt(buf: ArrayBuffer): {
