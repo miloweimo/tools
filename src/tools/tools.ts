@@ -2,6 +2,14 @@ import type { ToolDefinition } from './types'
 
 export const tools: ToolDefinition[] = [
   {
+    name: 'camera-mirror',
+    path: '/camera-mirror',
+    title: '摄像头镜子',
+    description: '调用前置摄像头，镜像显示，当作镜子使用。',
+    tags: ['摄像头', '镜子', '视频', '前置'],
+    component: () => import('../views/tools/CameraMirrorView.vue')
+  },
+  {
     name: 'about',
     path: '/about',
     title: '关于',

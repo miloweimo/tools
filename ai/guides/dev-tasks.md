@@ -22,3 +22,21 @@
 2. 在 [`src/tools/tools.ts`](../../src/tools/tools.ts) 中追加一项：`name`、`path`、`title`、`description`、`tags`、`component`（懒加载）。
 3. 无需再改路由：子路由由注册表自动生成。
 4. 可选：为复杂逻辑补充单元测试，并在此文档或 changelog 中记一笔。
+
+---
+
+## 里程碑：摄像头镜子（2026-03-25）
+
+**目标**：调用设备摄像头（优先前置），在页面镜像显示，用作「镜子」；离开页面时释放摄像头。
+
+### 任务清单
+
+- [x] 新增页面 `src/views/tools/CameraMirrorView.vue`：`getUserMedia`、`<video>` 展示、`scaleX(-1)` 镜像、关闭/卸载时 `stop()` 轨道
+- [x] 在 [`src/tools/tools.ts`](../../src/tools/tools.ts) 注册工具：`/camera-mirror`，标题、描述、标签便于首页搜索
+- [x] 权限与错误提示：拒绝权限、无设备等文案
+- [x] 记录：本文件 + [`changelog/2026-03-25-camera-mirror.md`](../changelog/2026-03-25-camera-mirror.md)
+
+### 说明
+
+- 需 **HTTPS** 或 `localhost` 下浏览器才允许摄像头（与站点部署环境一致）。
+- 首次使用需用户点击「开启摄像头」以满足用户手势策略。
