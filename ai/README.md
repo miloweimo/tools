@@ -10,6 +10,7 @@ ai/
 ├── guides/            # 指导说明
 │   ├── project-context.md
 │   ├── dev-tasks.md   # 开发任务计划与勾选
+│   ├── tool-ideas.md  # 小工具点子备忘（实用向 + 脑洞向）
 │   └── ...            # 其他规范、提示词模板等
 └── changelog/         # 开发改动记录
     └── ...            # 每次 AI 辅助改动的记录文件
@@ -23,6 +24,7 @@ ai/
 - 编码规范与风格要求
 - 常用提示词模板
 - AI 使用注意事项
+- 小工具功能灵感：[`guides/tool-ideas.md`](guides/tool-ideas.md)
 
 ## changelog（开发改动记录）
 

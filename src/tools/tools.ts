@@ -2,6 +2,14 @@ import type { ToolDefinition } from './types'
 
 export const tools: ToolDefinition[] = [
   {
+    name: 'jiaobei',
+    path: '/jiaobei',
+    title: '掷筊',
+    description: '模拟圣杯、笑杯、阴杯；支持摇一摇掷筊。',
+    tags: ['掷筊', '圣杯', '算命', '摇一摇', 'DeviceMotion'],
+    component: () => import('../views/tools/JiaobeiView.vue')
+  },
+  {
     name: 'camera-mirror',
     path: '/camera-mirror',
     title: '摄像头镜子',

@@ -54,3 +54,21 @@
 - [x] 各页面容器：水平留白交给 `#app`，避免与组件内 `padding` 重复
 - [x] [`cypress.config.ts`](../../cypress.config.ts) 与 [`package.json`](../../package.json) 中 e2e 等待地址改为 `http://localhost:4173/tools`
 - [x] 文档：`project-context`、本文件、[`changelog/2026-03-25-hash-router-layout.md`](../changelog/2026-03-25-hash-router-layout.md)
+
+---
+
+## 里程碑：掷筊（圣杯模拟 + 摇一摇）（2026-03-25）
+
+**目标**：模拟两片筊杯落地结果（圣杯 / 笑杯 / 阴杯）；可选 `devicemotion` 摇晃触发投掷；娱乐向免责说明。
+
+### 任务清单
+
+- [x] 页面 [`src/views/tools/JiaobeiView.vue`](../../src/views/tools/JiaobeiView.vue)：随机两面、结果文案、投掷动画、防抖
+- [x] iOS 等环境：`DeviceMotionEvent.requestPermission` 在用户点击「启用摇一摇」后调用
+- [x] [`src/tools/tools.ts`](../../src/tools/tools.ts) 注册 `/jiaobei`
+- [x] [`changelog/2026-03-25-jiaobei.md`](../changelog/2026-03-25-jiaobei.md) + 本段记录
+
+### 说明
+
+- 摇一摇阈值因设备而异，若过于灵敏或迟钝可在组件内调整 `shakeStrength` 判定与 `TOSS_DEBOUNCE_MS`。
+- 需 **HTTPS** 或 **localhost** 时，部分浏览器才暴露运动传感器。
