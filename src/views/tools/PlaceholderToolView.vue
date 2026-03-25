@@ -1,15 +1,15 @@
 <template>
-  <div class="about">
-    <h1>关于</h1>
-    <p>本站为个人小工具集合，部署于 GitHub Pages。</p>
+  <div class="placeholder">
+    <h1>更多工具即将上线</h1>
+    <p>此页面用于演示工具注册流程，后续可替换为具体功能。</p>
   </div>
 </template>
 
 <style scoped>
-.about {
+.placeholder {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0;
 }
 
 h1 {
@@ -21,6 +21,5 @@ h1 {
 p {
   color: var(--color-text);
   line-height: 1.6;
-  margin: 0;
 }
 </style>
