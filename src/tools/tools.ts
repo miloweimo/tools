@@ -26,6 +26,14 @@ export const tools: ToolDefinition[] = [
     component: () => import('../views/tools/CameraMirrorView.vue')
   },
   {
+    name: 'three-body',
+    path: '/three-body',
+    title: '三体模拟',
+    description: 'Canvas 上三个质点的万有引力运动，每次进入随机初动量。',
+    tags: ['三体', '物理', 'Canvas', '模拟', '引力'],
+    component: () => import('../views/tools/ThreeBodyView.vue')
+  },
+  {
     name: 'face-loading-ring',
     path: '/face-loading-ring',
     title: '人形进度环',
