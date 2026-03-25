@@ -72,3 +72,23 @@
 
 - 摇一摇阈值因设备而异，若过于灵敏或迟钝可在组件内调整 `shakeStrength` 判定与 `TOSS_DEBOUNCE_MS`。
 - 需 **HTTPS** 或 **localhost** 时，部分浏览器才暴露运动传感器。
+
+---
+
+## 里程碑：甘特图（2026-03-25）
+
+**目标**：横轴日期、纵轴任务；增删改任务名；拖拽条调整起止日；自定义日期范围；新任务随机色；可选显示星期；本地持久化。
+
+### 任务清单
+
+- [x] 页面 [`src/views/tools/GanttChartView.vue`](../../src/views/tools/GanttChartView.vue)
+- [x] 日期工具 [`src/utils/ganttDates.ts`](../../src/utils/ganttDates.ts) + Vitest
+- [x] [`src/tools/tools.ts`](../../src/tools/tools.ts) 注册 `/gantt`
+- [x] [`changelog/2026-03-25-gantt.md`](../changelog/2026-03-25-gantt.md) + 本段
+
+### 说明
+
+- 数据存 `localStorage` 键 `tools-gantt-v1`；清除站点数据会丢失。
+- 色块拖拽依赖 Pointer Events；窄屏可横向滚动时间轴。
+- 导出/导入：CSV（UTF-8 BOM）与 Excel（`xlsx`）；见 [`src/utils/ganttIo.ts`](../../src/utils/ganttIo.ts)。
+- 任务行左侧拖动手柄：HTML5 拖放调整顺序（左侧行与右侧轨道均可作为释放目标）。

@@ -2,6 +2,14 @@ import type { ToolDefinition } from './types'
 
 export const tools: ToolDefinition[] = [
   {
+    name: 'gantt',
+    path: '/gantt',
+    title: '甘特图',
+    description: '按日期排任务条，可拖拽调整工期；支持自定义范围与星期显示。',
+    tags: ['甘特图', '项目', '任务', '日期', '拖拽'],
+    component: () => import('../views/tools/GanttChartView.vue')
+  },
+  {
     name: 'jiaobei',
     path: '/jiaobei',
     title: '掷筊',
