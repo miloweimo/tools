@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { tools } from '../tools/tools'
@@ -10,7 +10,8 @@ const toolRoutes: RouteRecordRaw[] = tools.map((t) => ({
 }))
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // 哈希路由：适合 GitHub Pages 子路径部署，形如 https://user.github.io/tools/#/camera-mirror
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',

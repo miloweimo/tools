@@ -89,7 +89,13 @@ onBeforeUnmount(() => {
 .camera-mirror {
   max-width: 48rem;
   margin: 0 auto;
-  padding: 1rem 1rem 2rem;
+  padding: 0.75rem 0 2rem;
+}
+
+@media (min-width: 640px) {
+  .camera-mirror {
+    padding-top: 1rem;
+  }
 }
 
 .toolbar {

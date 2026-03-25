@@ -9,7 +9,7 @@
 .about {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 0 2rem;
 }
 
 h1 {

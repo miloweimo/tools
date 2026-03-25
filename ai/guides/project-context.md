@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-`tools` 是一个基于 Vue 3 + Vite 构建的前端工具集项目，通过 GitHub Pages（`docs/` 目录）进行部署。
+`tools` 是一个基于 Vue 3 + Vite 构建的前端工具集项目，通过 GitHub Pages（`docs/` 目录）进行部署。线上地址示例：<https://miloweimo.github.io/tools/>。路由为 **哈希模式**（`#/…`），与 `vite.config.ts` 中的 `base: '/tools/'` 配合，形如 `https://miloweimo.github.io/tools/#/camera-mirror`。
 
 ## 技术栈
 

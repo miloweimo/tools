@@ -19,7 +19,8 @@ import { RouterLink, RouterView } from 'vue-router'
 .top {
   border-bottom: 1px solid var(--color-border);
   background: var(--color-background-soft);
-  padding: 0.65rem 1rem;
+  padding: 0.65rem 0;
+  margin-bottom: 0.25rem;
 }
 
 .brand {

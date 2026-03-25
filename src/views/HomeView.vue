@@ -49,7 +49,14 @@ const filteredTools = computed(() => filterTools(query.value, tools))
 .home {
   max-width: 56rem;
   margin: 0 auto;
-  padding: 1rem 1rem 2rem;
+  /* 水平留白由 #app 统一控制，避免与 main.css 断点叠加过宽 */
+  padding: 0.75rem 0 2rem;
+}
+
+@media (min-width: 640px) {
+  .home {
+    padding-top: 1rem;
+  }
 }
 
 .hero {

@@ -40,3 +40,17 @@
 
 - 需 **HTTPS** 或 `localhost` 下浏览器才允许摄像头（与站点部署环境一致）。
 - 首次使用需用户点击「开启摄像头」以满足用户手势策略。
+
+---
+
+## 里程碑：哈希路由与移动端布局（2026-03-25）
+
+**目标**：GitHub Pages 子路径下使用哈希路由（`/tools/#/…`）；修正模板遗留断点导致的窄屏布局问题；E2E 与 `base: '/tools/'` 对齐。
+
+### 任务清单
+
+- [x] [`src/router/index.ts`](../../src/router/index.ts)：`createWebHashHistory(import.meta.env.BASE_URL)`
+- [x] [`src/assets/main.css`](../../src/assets/main.css)：去掉 `min-width: 1024px` 下 `body`/`#app` 双栏网格；采用 640px / 1024px 渐进式 `#app` 内边距
+- [x] 各页面容器：水平留白交给 `#app`，避免与组件内 `padding` 重复
+- [x] [`cypress.config.ts`](../../cypress.config.ts) 与 [`package.json`](../../package.json) 中 e2e 等待地址改为 `http://localhost:4173/tools`
+- [x] 文档：`project-context`、本文件、[`changelog/2026-03-25-hash-router-layout.md`](../changelog/2026-03-25-hash-router-layout.md)
