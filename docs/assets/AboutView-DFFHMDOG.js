@@ -1,0 +1,1 @@
+import{_ as s,c as o,b as t,a}from"./index-Df9vmr2m.js";const c={},n={class:"about"};function r(_,e){return a(),o("div",n,[...e[0]||(e[0]=[t("h1",null,"关于",-1),t("p",null,"本站为个人小工具集合，部署于 GitHub Pages。",-1)])])}const l=s(c,[["render",r],["__scopeId","data-v-e123bed1"]]);export{l as default};
