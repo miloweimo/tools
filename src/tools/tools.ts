@@ -26,6 +26,14 @@ export const tools: ToolDefinition[] = [
     component: () => import('../views/tools/CameraMirrorView.vue')
   },
   {
+    name: 'face-loading-ring',
+    path: '/face-loading-ring',
+    title: '人形进度环',
+    description: '摄像头或上传照片，把脸部画面裁成环形进度扇区；可调环厚度与镜像。',
+    tags: ['摄像头', '进度条', 'Canvas', '上传', '加载'],
+    component: () => import('../views/tools/FaceLoadingRingView.vue')
+  },
+  {
     name: 'about',
     path: '/about',
     title: '关于',

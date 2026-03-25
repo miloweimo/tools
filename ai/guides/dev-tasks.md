@@ -43,6 +43,22 @@
 
 ---
 
+## 里程碑：人形进度环（2026-03-25）
+
+**目标**：摄像头或本地图片作为源，用 Canvas 将人像裁入环形进度扇区；本机处理、不上传；离开页面释放摄像头与 `ObjectURL`。
+
+### 任务清单
+
+- [x] 页面 [`src/views/tools/FaceLoadingRingView.vue`](../../src/views/tools/FaceLoadingRingView.vue)：`getUserMedia`、文件上传、`drawImage` cover、环形扇区 `clip`、`requestAnimationFrame` 刷新、卸载时 `stop()` 与 `revokeObjectURL`
+- [x] [`src/tools/tools.ts`](../../src/tools/tools.ts) 注册 `/face-loading-ring`
+- [x] [`changelog/2026-03-25-face-loading-ring.md`](../changelog/2026-03-25-face-loading-ring.md) + 本段记录
+
+### 说明
+
+- 与「摄像头镜子」相同，摄像头需 **HTTPS** 或 **localhost**；页内已说明数据不上传。
+
+---
+
 ## 里程碑：哈希路由与移动端布局（2026-03-25）
 
 **目标**：GitHub Pages 子路径下使用哈希路由（`/tools/#/…`）；修正模板遗留断点导致的窄屏布局问题；E2E 与 `base: '/tools/'` 对齐。
