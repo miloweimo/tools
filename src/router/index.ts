@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { tools } from '../tools/tools'
+import { finishRouteProgress, startRouteProgress } from '@/utils/routeProgress'
 
 const toolRoutes: RouteRecordRaw[] = tools.map((t) => ({
   path: t.path,
@@ -20,6 +21,20 @@ const router = createRouter({
     },
     ...toolRoutes
   ]
+})
+
+router.beforeEach((to, from) => {
+  if (to.fullPath !== from.fullPath) {
+    startRouteProgress()
+  }
+})
+
+router.afterEach(() => {
+  finishRouteProgress()
+})
+
+router.onError(() => {
+  finishRouteProgress()
 })
 
 export default router

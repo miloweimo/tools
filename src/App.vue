@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import RouteProgressBar from '@/components/RouteProgressBar.vue'
 import {
   getStoredTheme,
   isEffectiveDark,
@@ -38,6 +39,7 @@ onUnmounted(() => {
 
 <template>
   <div class="app">
+    <RouteProgressBar />
     <header class="top">
       <RouterLink to="/" class="brand">小工具集</RouterLink>
       <div class="top-actions">
