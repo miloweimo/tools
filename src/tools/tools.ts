@@ -42,6 +42,14 @@ export const tools: ToolDefinition[] = [
     component: () => import('../views/tools/FaceLoadingRingView.vue')
   },
   {
+    name: 'browser-fingerprint',
+    path: '/browser-fingerprint',
+    title: '浏览器指纹查看',
+    description: '展示 Navigator、屏幕、时区、特性探测与 WebGL 等可读指纹信息，便于自查与调试。',
+    tags: ['指纹', 'User-Agent', 'WebGL', '屏幕', '隐私', 'Navigator', 'UA-CH'],
+    component: () => import('../views/tools/BrowserFingerprintView.vue')
+  },
+  {
     name: 'about',
     path: '/about',
     title: '关于',

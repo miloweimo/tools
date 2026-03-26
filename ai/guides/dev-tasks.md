@@ -121,3 +121,17 @@
 - [x] [`src/utils/theme.ts`](../../src/utils/theme.ts) + [`src/main.ts`](../../src/main.ts) 防闪烁
 - [x] [`src/App.vue`](../../src/App.vue) 切换按钮
 - [x] [`changelog/2026-03-25-theme-toggle.md`](../changelog/2026-03-25-theme-toggle.md)
+
+---
+
+## 里程碑：浏览器指纹查看器（2026-03-26）
+
+**目标**：本机展示 Navigator、UA-CH、屏幕、时区、特性与 WebGL 等可读指纹信息；计划全文归档于 `PLAN.md` 与 changelog。
+
+### 任务清单
+
+- [x] [`src/utils/browserFingerprint.ts`](../../src/utils/browserFingerprint.ts)：`collectBrowserFingerprint`、`formatDisplayValue`
+- [x] [`src/views/tools/BrowserFingerprintView.vue`](../../src/views/tools/BrowserFingerprintView.vue) 分组展示与复制 JSON
+- [x] [`src/tools/tools.ts`](../../src/tools/tools.ts) 注册 `/browser-fingerprint`
+- [x] [`src/utils/__tests__/browserFingerprint.spec.ts`](../../src/utils/__tests__/browserFingerprint.spec.ts) + `pnpm run type-check` / `vitest run`
+- [x] [`changelog/2026-03-26-browser-fingerprint-viewer.md`](../changelog/2026-03-26-browser-fingerprint-viewer.md)、根目录 [`PLAN.md`](../../PLAN.md)、[`guides/browser-fingerprint-viewer-plan.md`](browser-fingerprint-viewer-plan.md)
